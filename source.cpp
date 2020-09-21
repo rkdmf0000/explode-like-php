@@ -1,26 +1,26 @@
-
 /**
  * title        Explode like PHP in c++
- * param        std::list<string>& box      It'll get referenced that std::list string object
- * param        std::string fuckYouText     It make required stuff by this text
- * param        const char limit            it divide string by this and that may be able to using null
+ * param        std::list<string>& box          It'll get referenced that std::list string object
+ * param        std::string fuckYouText         It make required stuff by this text
+ * param        char limit[]                    It divide string by this and that may be able to using null
+ * param        const std::size_t limitSize     Limit array size
  * desc         It provide like php explode function, but it is parameter variable referencing by a std::list<string>.
  * return       void
  * author       me
  * date         20:18 09.02.2020 / 09:39 09.18.2020 / 03:19 09.19.2020 / 22:29 09.20.2020
- * Dependence   std::list, std::string, std::string
+ * Dependence   std::list, std::string
  * */
 
-void explodeLikePHP(std::list<string>& box, std::string fuckYouText, char limit[])
+void explodeLikePHP(std::list<string>& box, std::string fuckYouText, char limit[], const std::size_t limitSize)
 {
     //section of declare
     bool isNotFoundLimitorLefts(true);
     char* P_Limit = limit;
     const std::size_t stringLength = fuckYouText.size();
-    const std::size_t limitLength =  std::strlen(limit);;
+    const std::size_t limitLength = limitSize;
     const unsigned int I_multiByt(3);
     char localCharsetStorage[stringLength][I_multiByt][limitLength];
-
+    
     //Preparing for Comparable charset
     if (!fuckYouText.empty())
     {
@@ -46,7 +46,10 @@ void explodeLikePHP(std::list<string>& box, std::string fuckYouText, char limit[
         };
         std::string xc;
         bool breakPointFlag(false);
+
         for (; *P_Limit != '\0'; ++P_Limit) xc+=*P_Limit;
+        //for(unsigned int x(0);x<limitLength;++x)xc+=limit[x];
+
         for( unsigned int ci(0); ci<stringLength; ++ci )
         {
             for ( unsigned int mdi(0); mdi<(I_multiByt); ++mdi )
@@ -61,7 +64,7 @@ void explodeLikePHP(std::list<string>& box, std::string fuckYouText, char limit[
                     for(unsigned int eraseIdx(ci+mdi+limitLength); eraseIdx<stringLength; ++eraseIdx) dummyStr += fuckYouText[eraseIdx];
                     fuckYouText.clear();
                     fuckYouText = std::move(dummyStr);
-                    explodeLikePHP(box, fuckYouText, limit);
+                    explodeLikePHP(box, fuckYouText, limit, limitLength);
                 }
                 if (breakPointFlag == true) break;
             };
@@ -76,5 +79,6 @@ void explodeLikePHP(std::list<string>& box, std::string fuckYouText, const std::
     const std::size_t size = limit.size();
     char c_limit[size];
     for(unsigned int i(0);i<size;++i) c_limit[i] += limit[i];
-    explodeLikePHP(box, fuckYouText, c_limit);
+
+    explodeLikePHP(box, fuckYouText, c_limit, size);
 };
