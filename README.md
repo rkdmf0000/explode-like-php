@@ -1,4 +1,4 @@
-### 쓰지마!!! 버그있다!!!!
+### 73,854 길이 근처까지 차면 터져 죽음 해결방안 찾는중
 
 # explode-like-php
 It provide like php explode function, but it is parameter variable referencing by a std::list&lt;string>.
