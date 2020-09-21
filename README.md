@@ -2,6 +2,8 @@
 ### heap으로 변경했음 한계치 증가
 ### heap으로 쓰고 다 쓴 배열 지움 한계치 없어짐 와오!
 
+SOURCE : https://github.com/rkdmf0000/explode-like-php/blob/master/source-heap.cpp
+
 # explode-like-php
 It provide like php explode function, but it is parameter variable referencing by a std::list&lt;string>.
 
