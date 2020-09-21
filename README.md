@@ -5,9 +5,10 @@ It provide like php explode function, but it is parameter variable referencing b
 ```c++
 /**
  * title        Explode like PHP in c++
- * param        std::list<string>& box      It'll get referenced that std::list string object
- * param        std::string fuckYouText     It make required stuff by this text
- * param        const char limit            it divide string by this and that may be able to using null
+ * param        std::list<string>& box          It'll get referenced that std::list string object
+ * param        std::string fuckYouText         It make required stuff by this text
+ * param        char limit[]                    It divide string by this and that may be able to using null
+ * param        const std::size_t limitSize     Limit array size
  * desc         It provide like php explode function, but it is parameter variable referencing by a std::list<string>.
  * return       void
  * author       me
@@ -19,8 +20,8 @@ It provide like php explode function, but it is parameter variable referencing b
 `실행`
 ```c++
     list<string> pTest1;
-    string pTest2("1234567890123가05가나4567890123456789");
-    string pTest3 = "가나";
+    string pTest2("12345가067890123가05가나다4567890가0123456가0789");
+    string pTest3 = "가0";
     char pTest4[] = {'0','5'};
     explodeLikePHP(pTest1, pTest2, pTest3);
 ```
@@ -39,12 +40,21 @@ It provide like php explode function, but it is parameter variable referencing b
 
 `결과`
 ```text
-string limit size : 1
-buff :: 1234567890123가05가나4567890123456789
-limit Length : 6
-buff :: 4567890123456789
-limit Length : 6
+string limit size : 4
+buff :: 12345가067890123가05가나다4567890가0123456가0789
+limit Length : 4
+buff :: 67890123가05가나다4567890가0123456가0789
+limit Length : 4
+buff :: 5가나다4567890가0123456가0789
+limit Length : 4
+buff :: 123456가0789
+limit Length : 4
+buff :: 789
+limit Length : 4
 Check array
-Index 1:1234567890123가05
-Index 2:4567890123456789
+Index 1:12345
+Index 2:67890123
+Index 3:5가나다4567890
+Index 4:123456
+Index 5:789
 ```
