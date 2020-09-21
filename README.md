@@ -16,6 +16,7 @@ It provide like php explode function, but it is parameter variable referencing b
  * */
 ```
 
+`실행`
 ```c++
     list<string> pTest1;
     string pTest2("1234567890123가05가나4567890123456789");
@@ -24,6 +25,19 @@ It provide like php explode function, but it is parameter variable referencing b
     explodeLikePHP(pTest1, pTest2, pTest3);
 ```
 
+`검증`
+```c++
+    cout << "Check array" << '\n';
+    list<string>::iterator testIter1;
+    int testIdx(0);
+    for (testIter1=pTest1.begin();testIter1!=pTest1.end();++testIter1)
+    {
+        ++testIdx;
+        cout << "Index " << testIdx << ":" << *testIter1 << '\n';
+    }
+```
+
+`결과`
 ```text
 string limit size : 1
 buff :: 1234567890123가05가나4567890123456789
