@@ -12,7 +12,7 @@ It provide like php explode function, but it is parameter variable referencing b
  * return       void
  * author       me
  * date         20:18 09.02.2020 / 09:39 09.18.2020 / 03:19 09.19.2020 / 22:29 09.20.2020
- * Dependence   std::list, std::string, std::string
+ * Dependence   std::list, std::string
  * */
 ```
 
