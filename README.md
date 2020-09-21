@@ -1,6 +1,19 @@
 # explode-like-php
 It provide like php explode function, but it is parameter variable referencing by a std::list&lt;string>.
 
+```c++
+/**
+ * title        Explode like PHP in c++
+ * param        std::list<string>& box      It'll get referenced that std::list string object
+ * param        std::string fuckYouText     It make required stuff by this text
+ * param        const char limit            it divide string by this and that may be able to using null
+ * desc         It provide like php explode function, but it is parameter variable referencing by a std::list<string>.
+ * return       void
+ * author       me
+ * date         20:18 09.02.2020 / 09:39 09.18.2020 / 03:19 09.19.2020 / 22:29 09.20.2020
+ * Dependence   std::list, std::string, std::string
+ * */
+```
 
 ```c++
     list<string> pTest1;
