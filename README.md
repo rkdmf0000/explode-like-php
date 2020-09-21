@@ -1,3 +1,5 @@
+### 쓰지마!!! 버그있다!!!!
+
 # explode-like-php
 It provide like php explode function, but it is parameter variable referencing by a std::list&lt;string>.
 
