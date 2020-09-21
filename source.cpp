@@ -24,17 +24,6 @@ void explodeLikePHP(std::list<string>& box, std::string fuckYouText, char limit[
     {
         for ( unsigned int pwi(0); pwi<(stringLength); ++pwi )
         {
-            char c_buff;
-            int i_buff;
-            try {
-                c_buff = fuckYouText[pwi];
-                i_buff = static_cast<int>(fuckYouText[pwi]);
-            }
-            catch (...) // catch for error that cannot access index of array
-            {
-                c_buff = 0;
-                i_buff = 0;
-            }
             for ( unsigned int mdi(0); mdi<(I_multiByt); ++mdi )
                 for ( unsigned int ldi(0); ldi<(limitLength); ++ldi )
                     localCharsetStorage[pwi][mdi][ldi] = fuckYouText[pwi+mdi+ldi];
