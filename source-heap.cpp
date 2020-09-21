@@ -59,6 +59,20 @@ void explodeLikePHP(std::list<string>& box, std::string fuckYouText, char limit[
                 for(unsigned int eraseIdx(ci+mdi+limitLength); eraseIdx<stringLength; ++eraseIdx) dummyStr += fuckYouText[eraseIdx];
                 fuckYouText.clear();
                 fuckYouText = std::move(dummyStr);
+
+                for(unsigned int d1i(0);d1i<stringLength;++d1i)
+                {
+                    for(unsigned int d2i(0);d2i<I_multiByt;++d2i)
+                    {
+                        delete[] localCharsetStorage[d1i][d2i];
+                    };
+                };
+                for(unsigned int d1i(0);d1i<stringLength;++d1i)
+                {
+                    delete[] localCharsetStorage[d1i];
+                };
+                delete[] localCharsetStorage;
+
                 explodeLikePHP(box, fuckYouText, limit, limitLength);
             }
             if (breakPointFlag == true) break;
@@ -67,19 +81,6 @@ void explodeLikePHP(std::list<string>& box, std::string fuckYouText, char limit[
     };
 
     if (isNotFoundLimitorLefts == true) box.push_back(fuckYouText);
-    
-    for(unsigned int d1i(0);d1i<stringLength;++d1i)
-    {
-        for(unsigned int d2i(0);d2i<I_multiByt;++d2i)
-        {
-            delete[] localCharsetStorage[d1i][d2i];
-        };
-    };
-    for(unsigned int d1i(0);d1i<stringLength;++d1i)
-    {
-            delete[] localCharsetStorage[d1i];
-    };
-    delete[] localCharsetStorage;
 
 };
 void explodeLikePHP(std::list<string>& box, std::string fuckYouText, const std::string& limit)
