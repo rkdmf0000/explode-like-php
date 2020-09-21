@@ -1,3 +1,4 @@
+
 /**
  * title        Explode like PHP in c++
  * param        std::list<string>& box          It'll get referenced that std::list string object
@@ -15,18 +16,14 @@ void explodeLikePHP(std::list<string>& box, std::string fuckYouText, char limit[
 {
     //section of declare
     bool isNotFoundLimitorLefts(true);
-    char* P_Limit = limit;
     const std::size_t stringLength = fuckYouText.size();
     const std::size_t limitLength = limitSize;
     const unsigned int I_multiByt(3);
     char localCharsetStorage[stringLength][I_multiByt][limitLength];
-    
-    //Preparing for Comparable charset
-    if (!fuckYouText.empty())
+    if (true)
     {
         for ( unsigned int pwi(0); pwi<(stringLength); ++pwi )
         {
-            //bool byteChainFlag(false);
             char c_buff;
             int i_buff;
             try {
@@ -38,17 +35,16 @@ void explodeLikePHP(std::list<string>& box, std::string fuckYouText, char limit[
                 c_buff = 0;
                 i_buff = 0;
             }
-            //byteChainFlag = i_buff <= -1;
             for ( unsigned int mdi(0); mdi<(I_multiByt); ++mdi )
                 for ( unsigned int ldi(0); ldi<(limitLength); ++ldi )
                     localCharsetStorage[pwi][mdi][ldi] = fuckYouText[pwi+mdi+ldi];
             //st-loop end
         };
+        
         std::string xc;
         bool breakPointFlag(false);
 
-        for (; *P_Limit != '\0'; ++P_Limit) xc+=*P_Limit;
-        //for(unsigned int x(0);x<limitLength;++x)xc+=limit[x];
+        for (int xcIdx(0);xcIdx<limitLength;++xcIdx) xc+=limit[xcIdx];
 
         for( unsigned int ci(0); ci<stringLength; ++ci )
         {
@@ -56,6 +52,7 @@ void explodeLikePHP(std::list<string>& box, std::string fuckYouText, char limit[
             {
                 std::string yc;
                 for ( unsigned int ldi(0); ldi<(limitLength); ++ldi ) yc += localCharsetStorage[ci][mdi][ldi];
+
                 if (xc.compare(yc) == 0) {
                     breakPointFlag = true;
                     isNotFoundLimitorLefts = false;
@@ -73,12 +70,10 @@ void explodeLikePHP(std::list<string>& box, std::string fuckYouText, char limit[
     };
     if (isNotFoundLimitorLefts == true) box.push_back(fuckYouText);
 };
-
 void explodeLikePHP(std::list<string>& box, std::string fuckYouText, const std::string& limit)
 {
     const std::size_t size = limit.size();
     char c_limit[size];
-    for(unsigned int i(0);i<size;++i) c_limit[i] += limit[i];
-
+    for(unsigned int i(0);i<size;++i) c_limit[i] = limit[i];
     explodeLikePHP(box, fuckYouText, c_limit, size);
 };
