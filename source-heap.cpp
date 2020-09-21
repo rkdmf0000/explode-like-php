@@ -4,7 +4,7 @@
  * param        std::string fuckYouText         It make required stuff by this text
  * param        char limit[]                    It divide string by this and that may be able to using null
  * param        const std::size_t limitSize     Limit array size
- * desc         It provide like php explode function, but it is parameter variable referencing by a std::list<string>.
+ * desc         It provide like php explode function, but it is parameter variable reference by a std::list<string>.
  * return       void
  * author       me
  * date         20:18 09.02.2020 / 09:39 09.18.2020 / 03:19 09.19.2020 / 22:29 09.20.2020
