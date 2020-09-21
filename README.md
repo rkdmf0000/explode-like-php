@@ -9,3 +9,14 @@ It provide like php explode function, but it is parameter variable referencing b
     char pTest4[] = {'0','5'};
     explodeLikePHP(pTest1, pTest2, pTest3);
 ```
+
+```text
+string limit size : 1
+buff :: 1234567890123가05가나4567890123456789
+limit Length : 6
+buff :: 4567890123456789
+limit Length : 6
+Check array
+Index 1:1234567890123가05
+Index 2:4567890123456789
+```
