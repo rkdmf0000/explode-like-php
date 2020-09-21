@@ -1,4 +1,6 @@
-### 73,854 길이 근처까지 차면 터져 죽음 해결방안 찾는중
+### 배열 73,854 길이 근처까지 차면 터져 죽음 해결방안 찾는중
+### heap으로 변경했음 한계치 증가
+### heap으로 쓰고 다 쓴 배열 지움 한계치 없어짐 와오!
 
 # explode-like-php
 It provide like php explode function, but it is parameter variable referencing by a std::list&lt;string>.
