@@ -1,7 +1,9 @@
 > ### SOURCE : https://github.com/rkdmf0000/explode-like-php/blob/master/source-heap.cpp
 
 # explode-like-php
-It provide like php explode function, but it is parameter variable referencing by a std::list&lt;string>.
+It provide like php explode function, but it is parameter variable referencing by a std::list<string>.
+that is being compared step by a byte!
+and any BIG string is not problem
 
 `망할 문자열 짜르는 함수입니다 줜나 쓸머없이 멀티바이트를 1바이트로 쪼개서 비교합니다(멀티바이트 지원한다는 이야기) cpp 연습하던중 호구같이 딴길로 새버려서 나온 부산물입니다 ㅠ` 
 ```c++
