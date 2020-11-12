@@ -1,5 +1,7 @@
 > ### SOURCE : https://github.com/rkdmf0000/explode-like-php/blob/master/source-heap.cpp
 
+지금보니까 왜 이리 했는지 모르겠네 개모태씀
+
 # explode-like-php
 It provide like php explode function, but it is parameter variable referencing by a std::list<string>.
 that is being compared step by a byte!
